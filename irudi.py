@@ -2,16 +2,16 @@ import zipfile
 import hashlib
 
 
-# Function to calculate the hash of a file
+
 def md5Kalkulatu(file_path):
-    hasher = hashlib.md5()
+    hash = hashlib.md5()
     with open(file_path, 'rb') as file:
         while True:
             data = file.read(65536)  
             if not data:
                   break
-            hasher.update(data)
-    return hasher.hexdigest()
+            hash.update(data)
+    return hash.hexdigest()
 
 zip_file_path = '/home/erreka/segur/1 Laborategia -  Zifraketa I-20230921/irudia.zip'
 with zipfile.ZipFile(zip_file_path, 'r') as archive:
